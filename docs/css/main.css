@@ -28,6 +28,9 @@ h6 {
     font-weight: 700;
 }
 
+li {
+	font-size: 20px;
+}
 
 @media(min-width:768px) {
     .navbar-fixed-top {
