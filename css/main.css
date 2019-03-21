@@ -29,6 +29,16 @@ h6 {
 	margin-bottom: 5px;
 }
 
+h1.title {
+	font-size: 36px;
+	font-weight: 200;
+}
+
+p.subtitle {
+	font-size: 26px;
+	font-weight: 200;
+}
+
 
 @media(min-width:768px) {
     .navbar-fixed-top {
@@ -179,6 +189,10 @@ p {
 	margin-bottom: 1rem;
 }
 
+.padding-top-20 {
+	padding-top: 20px;
+}
+
 .app-store {
 	width: 200px;
 	padding-top: 16px;
@@ -187,6 +201,16 @@ p {
 .app-icon {
 	border-radius: 20px;
 	width: 120px;
+	padding-top: 30px;
+}
+
+.app-icon-large {
+	border-radius: 20px;
+	width: 450px;
+}
+
+.screenshot {
+	width: 300px;
 }
 
 @media(max-width:767px) {
