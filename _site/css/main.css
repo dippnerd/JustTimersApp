@@ -213,12 +213,12 @@ p {
 	width: 450px;
 }
 
-.screenshot {
+.screenshot-md {
 	width: 300px;
 }
 
-.screenshot-md {
-	width: 408px;
+.screenshot {
+	width: 100%;
 }
 
 .row {
@@ -252,10 +252,6 @@ p {
 }
 
 @media (min-width: 576px) {
-	.screenshot-md {
-		width: 238px;
-	}
-
 	.excerpt {
 		margin-left: 0px;
 	}
@@ -266,10 +262,6 @@ p {
 }
 
 @media (min-width: 768px) {
-	.screenshot-md {
-		width: 308px;
-	}
-
 	.excerpt {
 		margin-left: 20px;
 	}
@@ -280,10 +272,6 @@ p {
 }
 
 @media (min-width: 992px) {
-	.screenshot-md {
-		width: 408px;
-	}
-
 	.excerpt {
 		margin-left: 50px;
 	}
