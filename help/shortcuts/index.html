@@ -1,0 +1,92 @@
+---
+layout: default
+title: Shortcuts App - Just Timers
+---
+<section>
+    <div class="container">
+        <h1>Shortcuts App</h1>
+        <p>New to iOS 12, Apple introduced the <a href="https://itunes.apple.com/us/app/shortcuts/id915249334?mt=8">Shortcuts app</a>. This app not only allows you to automate various parts of iOS, but it can also talk to third party apps, including Just Timers. Using the Shortcuts app, you can create new timers entirely using your voice. This document will provide download links for various Shortcuts available, as well outline the functionality provided by the Just Timers API so you can create your own Shortcuts.</p>
+
+        <h3>Downloads</h3>
+        <ul>
+            <li><a href="https://itunes.apple.com/us/app/shortcuts/id915249334?mt=8">Shortcuts App</a></li>
+            <li><a href="https://www.icloud.com/shortcuts/4fc4a164b2514f128793ffc35e85fac7">New Timer</a></li>
+        </ul>
+
+
+        <h3>API Functions</h3>
+        <ul>
+            <li><a href="#intro">API Introduction</a></li>
+            <li><a href="#new-timer">Create New Timer</a></li>
+            <li><a href="#delete-timer">Delete Timer(s)</a></li>
+            <li><a href="#pause-timer">Pause Timer(s)</a></li>
+            <li><a href="#reset-timer">Reset Timer(s)</a></li>
+            <li><a href="#restart-timer">Restart Timer(s)</a></li>
+            <li><a href="#resume-timer">Resume Timer(s)</a></li>
+        </ul>
+        
+        <h4 class="m-top-50" id="intro">API Introduction</h4>
+        <p>The Just Timers Shortcuts API is intended to allow control of most functions from the Shortcuts app. Overall it's pretty simple, you just need to create a URL with whatever actions and parameters, then open it with the "Open URLs" function in Shortcuts.</p>
+
+        <p>If you haven't already, I highly recommend downloading the <a href="https://www.icloud.com/shortcuts/4fc4a164b2514f128793ffc35e85fac7">New Timer</a> Shortcut to use as an example</p>
+
+        <p>The basic URL scheme is <span class="api-snippet">justtimers://x-callback-url/<span class="api-action">[action]</span>/?<span class="api-param">[parameter]</span>=<span class="api-value">[value]</span></span> for individual timers. To control all timers simultaneously you use the "all" modifier as such: <span class="api-snippet">justtimers://x-callback-url/<span class="api-action">[action]</span>/<span class="api-param">all</span></span></p>
+
+        <p>Keep in mind you may need to URL encode values that get passed into the parameters, as things like spaces or special characters may cause problems</p>
+
+        <p class="bold">Examples:</p>
+        <p><span class="api-snippet">justtimers://x-callback-url/<span class="api-action">new</span>/?<span class="api-param">name</span>=<span class="api-value">Tea</span>&<span class="api-param">duration</span>=<span class="api-value">2%20minutes</span></span></p>
+        <p><span class="api-snippet">justtimers://x-callback-url/<span class="api-action">delete</span>/?<span class="api-param">name</span>=<span class="api-value">Tea</span></p>
+        <p><span class="api-snippet">justtimers://x-callback-url/<span class="api-action">restart</span>/<span class="api-param">all</span></span></p>
+
+        <h4 class="m-top-50" id="new-timer">Create New Timer</h4>
+        <p>To create a new timer, two parameters are required. You must always provide a name, and you can specify the duration either as a sentence like "2 minutes and 20 seconds" or entirely in seconds as a number without words.</p>
+
+        <p>Name can contain spaces, and Shortcuts will typically handle URL encoding the value if there are spaces, but keep this in mind if you run into problems</p>
+
+        <p>To specify the duration as a sentence (this is specifically intended for use with the dictation feature of Shortcuts) use the "duration" parameter, for seconds as a number only, use the "seconds" parameter.</p>
+
+        <p class="bold">Examples:</p>
+        <p><span class="api-snippet">justtimers://x-callback-url/<span class="api-action">new</span>/?<span class="api-param">name</span>=<span class="api-value">Tea</span>&<span class="api-param">duration</span>=<span class="api-value">2%20minutes</span></span></p>
+        <p><span class="api-snippet">justtimers://x-callback-url/<span class="api-action">new</span>/?<span class="api-param">name</span>=<span class="api-value">Tea</span>&<span class="api-param">seconds</span>=<span class="api-value">120</span></span></p>
+
+        <h4 class="m-top-50" id="delete-timer">Delete Timer(s)</h4>
+        <p>Deleting timers can be handled in two ways. You can provide the name of a timer to delete, or you can delete all timers simultaneously.</p>
+
+        <p class="bold">Examples:</p>
+        <p><span class="api-snippet">justtimers://x-callback-url/<span class="api-action">delete</span>/?<span class="api-param">name</span>=<span class="api-value">Tea</span></span></p>
+        <p><span class="api-snippet">justtimers://x-callback-url/<span class="api-action">delete</span>/<span class="api-param">all</span></span></p>
+
+        <h4 class="m-top-50" id="pause-timer">Pause Timer(s)</h4>
+        <p>Pausing timers can be handled in two ways. You can provide the name of a timer to pause, or you can pause all timers simultaneously.</p>
+
+        <p class="bold">Examples:</p>
+        <p><span class="api-snippet">justtimers://x-callback-url/<span class="api-action">pause</span>/?<span class="api-param">name</span>=<span class="api-value">Tea</span></span></p>
+        <p><span class="api-snippet">justtimers://x-callback-url/<span class="api-action">pause</span>/<span class="api-param">all</span></span></p>
+
+        <h4 class="m-top-50" id="reset-timer">Reset Timer(s)</h4>
+        <p>Reseting timers can be handled in two ways. You can provide the name of a timer to reset, or you can reset all timers simultaneously.</p>
+
+        <p class="bold">Examples:</p>
+        <p><span class="api-snippet">justtimers://x-callback-url/<span class="api-action">reset</span>/?<span class="api-param">name</span>=<span class="api-value">Tea</span></span></p>
+        <p><span class="api-snippet">justtimers://x-callback-url/<span class="api-action">reset</span>/<span class="api-param">all</span></span></p>
+
+        <h4 class="m-top-50" id="restart-timer">Restart Timer(s)</h4>
+        <p>Restarting timers can be handled in two ways. You can provide the name of a timer to restart, or you can restart all timers simultaneously.</p>
+
+        <p class="bold">Examples:</p>
+        <p><span class="api-snippet">justtimers://x-callback-url/<span class="api-action">restart</span>/?<span class="api-param">name</span>=<span class="api-value">Tea</span></span></p>
+        <p><span class="api-snippet">justtimers://x-callback-url/<span class="api-action">restart</span>/<span class="api-param">all</span></span></p>
+
+        <h4 class="m-top-50" id="resume-timer">Resume Timer(s)</h4>
+        <p>Resuming timers can be handled in two ways. You can provide the name of a timer to resume, or you can resume all timers simultaneously.</p>
+
+        <p class="bold">Examples:</p>
+        <p><span class="api-snippet">justtimers://x-callback-url/<span class="api-action">resume</span>/?<span class="api-param">name</span>=<span class="api-value">Tea</span></span></p>
+        <p><span class="api-snippet">justtimers://x-callback-url/<span class="api-action">resume</span>/<span class="api-param">all</span></span></p>
+
+  
+        <h4 class="m-top-50">Still need help?</h4>
+        <p>Please feel free to contact support via <a href="mailto:support@justtimers.app">email</a> or <a href="https://twitter.com/JustTimers">Twitter</a></p>
+    </div>
+</section>

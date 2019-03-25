@@ -29,6 +29,10 @@ h6 {
 	margin-bottom: 5px;
 }
 
+.m-top-50 {
+	margin-top: 50px;
+}
+
 h1.title {
 	font-size: 36px;
 	font-weight: 200;
@@ -187,6 +191,32 @@ p {
 	padding-top: 0;
 	margin-top: 0;
 	margin-bottom: 1rem;
+}
+
+
+
+p.bold {
+	font-weight: bold;
+}
+
+.api-snippet {
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	background-color: #f6f8fa;
+}
+
+.api-action {
+	font-weight: bold;
+	color: #ff7565
+}
+
+.api-param {
+	font-weight: bold;
+	color: #d73a49
+}
+
+.api-value {
+	font-weight: bold;
+	color: #6f42c1
 }
 
 .padding-top-20 {

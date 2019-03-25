@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>Shortcuts App - Just Timers</title>
+    <link rel="apple-touch-icon" sizes="57x57" href="/images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/faviconfavicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/images/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/images/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="apple-itunes-app" content="app-id=1453573845">
+    <meta name="description" content="The missing timers app for iOS">
+    <meta property="og:title" content="Just Timers" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://justtimers.app/" />
+    <meta property="og:site_name" content="Just Timers"/>
+    <meta property="og:description" content="The missing timers app for iOS" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"> 
+    <link href="/css/main.css?v=1553533456" rel="stylesheet" />
+  </head>
+
+  <body id="page-top">
+
+   <!--topnav-->
+  <nav class="navbar navbar-default navbar-fixed-top navbar-shrink">
+        <div class="container">
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Just Timers</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li class="navbar-menu">
+                        <a href="/press/">Press Kit</a>
+                    </li>
+                    <li class="navbar-menu">
+                        <a href="/privacy/">Privacy</a>
+                    </li>
+                    <li class="navbar-menu">
+                        <a href="/help/">Help</a>
+                    </li>
+                    <li class="navbar-menu">
+                        <a href="https://twitter.com/JustTimers"><i class="fa fa-fw fa-twitter"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+   <!--topnav-->
+
+
+   <!--content-->
+   <section>
+    <div class="container">
+        <h1>Shortcuts App</h1>
+        <p>New to iOS 12, Apple introduced the <a href="https://itunes.apple.com/us/app/shortcuts/id915249334?mt=8">Shortcuts app</a>. This app not only allows you to automate various parts of iOS, but it can also talk to third party apps, including Just Timers. Using the Shortcuts app, you can create new timers entirely using your voice. This document will provide download links for various Shortcuts available, as well outline the functionality provided by the Just Timers API so you can create your own Shortcuts.</p>
+
+        <h3>Downloads</h3>
+        <ul>
+            <li><a href="https://itunes.apple.com/us/app/shortcuts/id915249334?mt=8">Shortcuts App</a></li>
+            <li><a href="https://www.icloud.com/shortcuts/4fc4a164b2514f128793ffc35e85fac7">New Timer</a></li>
+        </ul>
+
+
+        <h3>API Functions</h3>
+        <ul>
+            <li><a href="#intro">API Introduction</a></li>
+            <li><a href="#new-timer">Create New Timer</a></li>
+            <li><a href="#delete-timer">Delete Timer(s)</a></li>
+            <li><a href="#pause-timer">Pause Timer(s)</a></li>
+            <li><a href="#reset-timer">Reset Timer(s)</a></li>
+            <li><a href="#restart-timer">Restart Timer(s)</a></li>
+            <li><a href="#resume-timer">Resume Timer(s)</a></li>
+        </ul>
+        
+        <h4 class="m-top-50" id="intro">API Introduction</h4>
+        <p>The Just Timers Shortcuts API is intended to allow control of most functions from the Shortcuts app. Overall it's pretty simple, you just need to create a URL with whatever actions and parameters, then open it with the "Open URLs" function in Shortcuts.</p>
+
+        <p>If you haven't already, I highly recommend downloading the <a href="https://www.icloud.com/shortcuts/4fc4a164b2514f128793ffc35e85fac7">New Timer</a> Shortcut to use as an example</p>
+
+        <p>The basic URL scheme is <span class="api-snippet">justtimers://x-callback-url/<span class="api-action">[action]</span>/?<span class="api-param">[parameter]</span>=<span class="api-value">[value]</span></span> for individual timers. To control all timers simultaneously you use the "all" modifier as such: <span class="api-snippet">justtimers://x-callback-url/<span class="api-action">[action]</span>/<span class="api-param">all</span></span></p>
+
+        <p>Keep in mind you may need to URL encode values that get passed into the parameters, as things like spaces or special characters may cause problems</p>
+
+        <p class="bold">Examples:</p>
+        <p><span class="api-snippet">justtimers://x-callback-url/<span class="api-action">new</span>/?<span class="api-param">name</span>=<span class="api-value">Tea</span>&<span class="api-param">duration</span>=<span class="api-value">2%20minutes</span></span></p>
+        <p><span class="api-snippet">justtimers://x-callback-url/<span class="api-action">delete</span>/?<span class="api-param">name</span>=<span class="api-value">Tea</span></p>
+        <p><span class="api-snippet">justtimers://x-callback-url/<span class="api-action">restart</span>/<span class="api-param">all</span></span></p>
+
+        <h4 class="m-top-50" id="new-timer">Create New Timer</h4>
+        <p>To create a new timer, two parameters are required. You must always provide a name, and you can specify the duration either as a sentence like "2 minutes and 20 seconds" or entirely in seconds as a number without words.</p>
+
+        <p>Name can contain spaces, and Shortcuts will typically handle URL encoding the value if there are spaces, but keep this in mind if you run into problems</p>
+
+        <p>To specify the duration as a sentence (this is specifically intended for use with the dictation feature of Shortcuts) use the "duration" parameter, for seconds as a number only, use the "seconds" parameter.</p>
+
+        <p class="bold">Examples:</p>
+        <p><span class="api-snippet">justtimers://x-callback-url/<span class="api-action">new</span>/?<span class="api-param">name</span>=<span class="api-value">Tea</span>&<span class="api-param">duration</span>=<span class="api-value">2%20minutes</span></span></p>
+        <p><span class="api-snippet">justtimers://x-callback-url/<span class="api-action">new</span>/?<span class="api-param">name</span>=<span class="api-value">Tea</span>&<span class="api-param">seconds</span>=<span class="api-value">120</span></span></p>
+
+        <h4 class="m-top-50" id="delete-timer">Delete Timer(s)</h4>
+        <p>Deleting timers can be handled in two ways. You can provide the name of a timer to delete, or you can delete all timers simultaneously.</p>
+
+        <p class="bold">Examples:</p>
+        <p><span class="api-snippet">justtimers://x-callback-url/<span class="api-action">delete</span>/?<span class="api-param">name</span>=<span class="api-value">Tea</span></span></p>
+        <p><span class="api-snippet">justtimers://x-callback-url/<span class="api-action">delete</span>/<span class="api-param">all</span></span></p>
+
+        <h4 class="m-top-50" id="pause-timer">Pause Timer(s)</h4>
+        <p>Pausing timers can be handled in two ways. You can provide the name of a timer to pause, or you can pause all timers simultaneously.</p>
+
+        <p class="bold">Examples:</p>
+        <p><span class="api-snippet">justtimers://x-callback-url/<span class="api-action">pause</span>/?<span class="api-param">name</span>=<span class="api-value">Tea</span></span></p>
+        <p><span class="api-snippet">justtimers://x-callback-url/<span class="api-action">pause</span>/<span class="api-param">all</span></span></p>
+
+        <h4 class="m-top-50" id="reset-timer">Reset Timer(s)</h4>
+        <p>Reseting timers can be handled in two ways. You can provide the name of a timer to reset, or you can reset all timers simultaneously.</p>
+
+        <p class="bold">Examples:</p>
+        <p><span class="api-snippet">justtimers://x-callback-url/<span class="api-action">reset</span>/?<span class="api-param">name</span>=<span class="api-value">Tea</span></span></p>
+        <p><span class="api-snippet">justtimers://x-callback-url/<span class="api-action">reset</span>/<span class="api-param">all</span></span></p>
+
+        <h4 class="m-top-50" id="restart-timer">Restart Timer(s)</h4>
+        <p>Restarting timers can be handled in two ways. You can provide the name of a timer to restart, or you can restart all timers simultaneously.</p>
+
+        <p class="bold">Examples:</p>
+        <p><span class="api-snippet">justtimers://x-callback-url/<span class="api-action">restart</span>/?<span class="api-param">name</span>=<span class="api-value">Tea</span></span></p>
+        <p><span class="api-snippet">justtimers://x-callback-url/<span class="api-action">restart</span>/<span class="api-param">all</span></span></p>
+
+        <h4 class="m-top-50" id="resume-timer">Resume Timer(s)</h4>
+        <p>Resuming timers can be handled in two ways. You can provide the name of a timer to resume, or you can resume all timers simultaneously.</p>
+
+        <p class="bold">Examples:</p>
+        <p><span class="api-snippet">justtimers://x-callback-url/<span class="api-action">resume</span>/?<span class="api-param">name</span>=<span class="api-value">Tea</span></span></p>
+        <p><span class="api-snippet">justtimers://x-callback-url/<span class="api-action">resume</span>/<span class="api-param">all</span></span></p>
+
+  
+        <h4 class="m-top-50">Still need help?</h4>
+        <p>Please feel free to contact support via <a href="mailto:support@justtimers.app">email</a> or <a href="https://twitter.com/JustTimers">Twitter</a></p>
+    </div>
+</section>
+   <!--content-->
+
+
+   <!--footer-->
+    <footer class="text-center">        
+        <div class="footer-below">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        &#169; 2019 <a href="https://twitter.com/dippnerd">Aaron Dippner</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+   <!--footer-->
+
+    <div class="scroll-top page-scroll visible-xs visble-sm">
+        <a class="btn btn-primary" href="#page-top">
+            <i class="fa fa-chevron-up"></i>
+        </a>
+    </div>
+    
+
+    <script src="/js/jquery-1.11.0.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/main.js"></script>
+   </body>
+</html>
