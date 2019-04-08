@@ -40,15 +40,17 @@ title: Shortcuts App - Just Timers
         <p><span class="api-snippet">justtimers://x-callback-url/<span class="api-action">restart</span>/<span class="api-param">all</span></span></p>
 
         <h4 class="m-top-50" id="new-timer">Create New Timer</h4>
-        <p>To create a new timer, two parameters are required. You must always provide a name, and you can specify the duration either as a sentence like "2 minutes and 20 seconds" or entirely in seconds as a number without words.</p>
+        <p>To create a new timer, two parameters are required. You must always provide a name, and you can specify the duration either as a sentence like "2 minutes and 20 seconds" or entirely in seconds as a number without words. Optionally, you can specify whether the timer should be active when created. By default it will start running on creation.</p>
 
         <p>Name can contain spaces, and Shortcuts will typically handle URL encoding the value if there are spaces, but keep this in mind if you run into problems</p>
 
         <p>To specify the duration as a sentence (this is specifically intended for use with the dictation feature of Shortcuts) use the "duration" parameter, for seconds as a number only, use the "seconds" parameter.</p>
 
+        <p>New timers will be active by default. To pause a new timer instead, use the parameter "active" and the value "false". </p>
+
         <p class="bold">Examples:</p>
         <p><span class="api-snippet">justtimers://x-callback-url/<span class="api-action">new</span>/?<span class="api-param">name</span>=<span class="api-value">Tea</span>&<span class="api-param">duration</span>=<span class="api-value">2%20minutes</span></span></p>
-        <p><span class="api-snippet">justtimers://x-callback-url/<span class="api-action">new</span>/?<span class="api-param">name</span>=<span class="api-value">Tea</span>&<span class="api-param">seconds</span>=<span class="api-value">120</span></span></p>
+        <p><span class="api-snippet">justtimers://x-callback-url/<span class="api-action">new</span>/?<span class="api-param">name</span>=<span class="api-value">Tea</span>&<span class="api-param">seconds</span>=<span class="api-value">120</span>&<span class="api-param">active</span>=<span class="api-value">false</span></span></span></p>
 
         <h4 class="m-top-50" id="delete-timer">Delete Timer(s)</h4>
         <p>Deleting timers can be handled in two ways. You can provide the name of a timer to delete, or you can delete all timers simultaneously.</p>
