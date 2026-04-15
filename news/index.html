@@ -6,90 +6,50 @@ title: News - Just Timers
     <div class="container">
         <h1>News</h1>
 
-        <h2 class="title">Just Timers v4 Updates</h2>
-        <p class="post-date"><em>Published on March 27, 2025</em></p>
-    
-    <h3>Life, Apps, and Everything in Between</h3>
-    <p>When I first started Just Timers in 2019, it was a simple idea born out of a need for a straightforward, reliable timer app. Fast forward to today, and the journey has been anything but simple. Between becoming a parent and maintaining this app as a side project along side of my day job, development has been a delicate balancing act.</p>
-    
-    <h3>The Sync Saga: More Complex Than Expected</h3>
-    <p>If there's one feature that's been the bane of my existence, it's sync. What sounds like a simple concept – keeping timers consistent across iPhone and Apple Watch – has become a labyrinth of technical challenges.</p>
-    
-    <p>In version 3, I implemented two primary sync methods:</p>
-    <ol>
-        <li>WatchConnectivity for direct device-to-device sync</li>
-        <li>CloudKit for broader synchronization across devices</li>
-    </ol>
-    
-    <p>What started as a straightforward feature quickly revealed layers of complexity I hadn't anticipated. The fundamental question became: How do you ensure a timer's state remains consistent across multiple devices with potentially different connectivity and usage patterns?</p>
-    
-    <h4>The Sync Challenges</h4>
-    <ul>
-        <li><strong>State Synchronization</strong>: Determining the "true" state of a timer when devices might be offline, have poor connectivity, or update at different times.</li>
-        <li><strong>User Control</strong>: Implementing granular sync preferences. Should users be able to exclude specific devices from sync? How do we make this intuitive?</li>
-        <li><strong>Future Aspirations</strong>: My original vision included timer sharing between users, which only compounds these synchronization challenges.</li>
-    </ul>
-    
-    <h3>iOS Evolution: A Double-Edged Sword</h3>
-    <p>Apple's continuous platform evolution presents both opportunities and obstacles. Take App Intents, for example – a significant change in how apps integrate with the Shortcuts ecosystem.</p>
-    
-    <p>The migration to App Intents wasn't just a simple code swap. It required a fundamental rethink of how the app handles background tasks and user interactions. This led to some particularly tricky bugs:</p>
-    
-    <ul>
-        <li>Delayed notifications</li>
-        <li>Inconsistent timer states</li>
-        <li>Background processing complications</li>
-    </ul>
-    
-    <p>These aren't just minor hiccups. They represent deep systemic challenges that arise when working with a rapidly evolving mobile platform.</p>
-    
-    <h3>Version 4: A Ground-Up Rethink</h3>
-    <p>v4 isn't just an update – it's a reimagining. I've taken the lessons learned from previous versions and built something more robust, leveraging new iOS capabilities introduced in versions 16 and 17.</p>
-    <p>v4 is currently in its earliest stages of development. Right now, the app is focused on building a solid foundation with some very specific goals:</p>
+        <h2 class="title">Just Timers v3.5</h2>
+        <p class="post-date"><em>Published April 2026</em></p>
 
+        <h3>A long-overdue update</h3>
+        <p>It's been a while. In early 2025 I wrote about ambitious plans for v4, a ground-up rewrite with a rock-solid foundation. Life had other ideas. Between parenting, a day job, and the general chaos of side-project development, v4 remains a work in progress. But Just Timers didn't stand still.</p>
+        <p>v3.5 is out now, and while it doesn't carry the sweeping changes I once envisioned for v4, it represents something equally valuable: stability, modernization, and a foundation that actually works.</p>
 
-    <p>Current Focus</p>
+        <h3>What's new in v3.5</h3>
 
-    <ul>
-        <li>Countdown Timers: The core and only timer type currently implemented</li>
-        <li>App Intents Integration: Working on robust Shortcuts support</li>
-        <li>UI Foundations: Establishing a clean, intuitive interface for the most basic timer functionality</li>
-    </ul>   
+        <h4>Modernized</h4>
+        <ul>
+            <li>iOS 18 is now the minimum supported version</li>
+            <li>Shortcuts migrated to the modern App Intents framework, which is more reliable and future-proof</li>
+            <li>Widgets updated to the current App Intents-backed format</li>
+            <li>Apple Watch complications migrated to the new widgets format</li>
+        </ul>
 
-    <p>What's Not Ready (Yet)</p>
+        <h4>New features</h4>
+        <ul>
+            <li>New "Show Timer" Shortcut opens the app directly to a specific timer</li>
+            <li>New <code>view</code> x-callback-url action does the same for URL-based automation workflows</li>
+            <li>Interval timers now support an "Auto-Pause" parameter when created via Shortcuts</li>
+            <li>Sorting menu now includes a toggle to keep active timers in place or float them to the top</li>
+            <li>Stopwatch screen now shows controls for toggling milliseconds and switching between total and current lap times</li>
+        </ul>
 
-    <ul>
-    <li>Sync between devices</li>
-    <li>Background task handling</li>
-    <li>Advanced timer types (stopwatch, interval timers)</li>
-    <li>Complex synchronization features</li>
-    <li>x-callback-url support</li>
-    </ul>
+        <h4>Bug fixes</h4>
+        <ul>
+            <li>Live Activities are significantly more reliable</li>
+            <li>Fixed a tags-related issue affecting certain Shortcuts</li>
+            <li>Fixed an incorrect value being displayed for the "days" field</li>
+            <li>Fixed interval timers not playing sound while the app was open</li>
+            <li>Fixed notifications firing even when repeat notifications were disabled</li>
+            <li>Fixed an issue where deleting a timer would leave its Live Activity running</li>
+        </ul>
 
-    <p>This is very much an alpha-stage development. I'm prioritizing getting the core countdown timer experience right before expanding into more complex features. The goal right now is to create a rock-solid foundation that can support more advanced functionality in future updates.</p>
-    
-    <h3>The Human Side of Development</h3>
-    <p>Let's be real – this is a passion project squeezed between diaper changes, work commitments, and stolen moments of coding. Progress is slow, but it's progress nonetheless. Each bug fixed, each feature refined is a small victory.</p>
-    
-    <h3>What's Next?</h3>
-    <p>I'm soon opening up an early alpha to users who are willing to dive into an imperfect but promising app. Expect:</p>
-    <ul>
-        <li>Incomplete features</li>
-        <li>Potential bugs</li>
-        <li>Frequent updates</li>
-    </ul>
-    
-    <p>What I'm looking for is your feedback. What works? What doesn't? What would you love to see?</p>
-    
-    <h3>A Personal Note</h3>
-    <p>To everyone who's stuck with Just Timers through its iterations – thank you. This app exists because of passionate users who see potential in a simple idea.</p>
-    
-    <p>Stay tuned, stay patient, and most importantly – stay timed.</p>
-    
-    <hr>
-    
-    <p><em>Interested in being part of the Just Timers v4 journey? Reach out, and let's build something awesome together.</em></p>
+        <h3>On v4</h3>
+        <p>v4 is still something I want to build. The ideas haven't changed: a reimagined architecture, better sync, a cleaner foundation for more advanced timer types. What's changed is the timeline. Rather than leave the app in limbo while I chip away at a rewrite, v3.5 keeps things moving for everyone who relies on Just Timers today.</p>
+        <p>When v4 is ready to share, you'll hear about it here first.</p>
 
+        <h3>Thank you</h3>
+        <p>To everyone still using Just Timers and sticking with it through the quiet stretches: thank you. This app exists because of you.</p>
+
+        <hr>
 
         <h3 class="padding-top-20">Contact</h3>
         <p><b>Developer: Aaron Dippner</b><br>
